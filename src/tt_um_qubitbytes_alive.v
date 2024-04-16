@@ -20,8 +20,8 @@ module tt_um_qubitbytes_alive (
   wire reset = ! rst_n;
 
   // configure led segment
-//    wire [7:0] led_out;
-//  assign uo_out[7:0] = led_out; 
+    wire [7:0] led_out;
+  assign uo_out[7:0] = led_out; 
 
     
 // configure speaker
@@ -36,7 +36,7 @@ module tt_um_qubitbytes_alive (
       .clk   (clk),
       .rst   (reset),
       .ticks_per_milli (100),
-      .led   (uo_out),
+      .led   (led_out),
       .sound (speaker)
   );
 
