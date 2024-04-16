@@ -22,7 +22,7 @@ module tt_um_qubitbytes_alive (
   // configure unused wires
   wire _unused_ok = &{1'b0,
                     ena,
-                    uio_in,
+                    ui_in,
                     1'b0};
 
   // configure led segment
