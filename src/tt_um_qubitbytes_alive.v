@@ -20,7 +20,7 @@ module tt_um_qubitbytes_alive (
   wire reset = ! rst_n;
 
   // configure led segment
-  wire [7] led_out;
+    wire [7:0] led_out;
   assign uo_out[7:0] = led_out; 
 
     
