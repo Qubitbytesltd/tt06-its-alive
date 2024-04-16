@@ -363,7 +363,7 @@ assign song1_chorus_rhythm[58] = 4;
       a <= 4;
       b <= 0;
       notelength <= 0;
-      led <= 8'b11111111;
+    //  led <= 8'b11111111;
     end else begin
       tick_counter <= tick_counter + 1;
 
@@ -444,7 +444,7 @@ assign song1_chorus_rhythm[58] = 4;
     end
      // instantiate segment display
   seg7 seg7(.counter(a[3:0]), .segments(led[6:0]));
-  segdot segdot (.enable(delay),.dot_segment(led[7]));
+//  segdot segdot (.enable(delay),.dot_segment(led[7]));
 endmodule
 
 
