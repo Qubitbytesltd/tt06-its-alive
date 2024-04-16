@@ -26,16 +26,16 @@ module tt_um_qubitbytes_alive (
                     1'b0};
 
   // configure led segment
-    wire [7:0] led_out;
+  wire [7:0] led_out;
   assign uo_out[7:0] = led_out; 
 
     
-// configure speaker
-    reg speaker;
-    assign uio_oe = 8'b11111111;
-    assign uio_out[0] = speaker;
-    assign uio_out[1] = ~speaker;
-    assign uio_out[7:2] = 0;
+  // configure speaker
+  reg speaker;
+  assign uio_oe = 8'b11111111;
+  assign uio_out[0] = speaker;
+  assign uio_out[1] = ~speaker;
+  assign uio_out[7:2] = 0;
 
    // create process
     music_processor music_processor (
