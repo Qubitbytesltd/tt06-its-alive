@@ -15,7 +15,8 @@ project:
   
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
-    - "project.v"
+    - "tt_um_qubitbytes_alive.v"
+    - "music_processor.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
@@ -30,18 +31,18 @@ pinout:
   ui[7]: ""
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "led segment a"
+  uo[1]: "led segment b"
+  uo[2]: "led segment c"
+  uo[3]: "led segment d"
+  uo[4]: "led segment e"
+  uo[5]: "led segment f"
+  uo[6]: "led segment g"
+  uo[7]: "led segment dot"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
+  uio[0]: "speaker_p"
+  uio[1]: "speaker_n"
   uio[2]: ""
   uio[3]: ""
   uio[4]: ""
