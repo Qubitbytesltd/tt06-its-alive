@@ -422,7 +422,7 @@ assign song1_chorus_rhythm[58] = 4;
               b <= 0;
             end
           end
-          led[7] <=1'b1;
+            led[7] = 1'b1;
           millis_counter <= 0;
          end
       
@@ -431,7 +431,7 @@ assign song1_chorus_rhythm[58] = 4;
     end 
 
     if (millis_counter == notelength && delay == 1) begin
-      led[7] <=1'b0;
+        led[7] = 1'b0;
           delay <= 2;
           sound_freq <= 0;
           millis_counter <= 0;
