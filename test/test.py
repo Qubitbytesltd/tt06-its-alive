@@ -19,10 +19,10 @@ async def test_project(dut):
   #dut.ui_in.value = 0
   #dut.uio_in.value = 0
   dut.rst_n.value = 0
-  await ClockCycles(dut.clk, 10000000) # 10 second delay
+  await ClockCycles(dut.clk, 3000) # 10 second delay
   dut.rst_n.value = 1
   
-  await ClockCycles(dut.clk, 30000000) # 30 second delay
+  await ClockCycles(dut.clk, 3000) # 30 second delay
   # Set the input values, wait one clock cycle, and check the output
   dut._log.info("Test")
   #dut.ui_in.value = 20
