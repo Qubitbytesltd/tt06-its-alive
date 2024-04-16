@@ -1,3 +1,4 @@
+`define default_netname none
 `default_nettype none
 
 
