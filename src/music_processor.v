@@ -20,7 +20,7 @@ module sound_processor (
   wire [31:0] ticks_per_second = ticks_per_milli * 1000;
 
   always @(posedge clk) begin
-    if (!rst) begin
+    if (rst) begin
       tick_counter <= 0;
       sound <= 0;
     end else if (freq == 0) begin
