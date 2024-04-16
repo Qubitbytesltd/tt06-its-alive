@@ -41,12 +41,12 @@ module tt_um_qubitbytes_alive (
     // need to check this
 //  assign uio_in[1] = ~speaker;
 //  assign uio_in[7:1] = 0; 
-
+  reg [15:0] ticks_per_ms = 100;
    // create process
     music_processor music_processor (
       .clk   (clk),
       .rst   (reset),
-      .ticks_per_milli (100),
+      .ticks_per_milli (ticks_per_ms),
       .led   (led_out),
       .sound (speaker)
   );
