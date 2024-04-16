@@ -23,7 +23,9 @@ module tt_um_qubitbytes_alive (
   wire _unused_ok = &{1'b0,
                     ena,
                     ui_in,
-                    1'b0};
+                    1'b0},
+                    uio_in,
+                    1'b0;
 
   // configure led segment
   wire [7:0] led_out;
@@ -31,13 +33,14 @@ module tt_um_qubitbytes_alive (
 
     
   // configure speaker
-  reg speaker;
+  wire speaker;
   assign uio_oe = 8'b00000001;
   assign uio_out[0] = speaker;
   assign uio_out[7:1] = 0;
-    
-  assign uio_in[1] = ~speaker;
-  assign uio_in[7:1] = 0; 
+
+    // need to check this
+//  assign uio_in[1] = ~speaker;
+//  assign uio_in[7:1] = 0; 
 
    // create process
     music_processor music_processor (
