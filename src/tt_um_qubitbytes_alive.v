@@ -25,9 +25,19 @@ module tt_um_qubitbytes_alive (
 
     
 // configure speaker
+    reg speaker;
     assign uio_oe = 8'b11111111;
     assign uio_out[0] = speaker;
     assign uio_out[1] = ~speaker;
     assign uio_out[7:2] = 0;
+
+   // create process
+    music_processor music_processor (
+      .clk   (clk),
+      .rst   (reset),
+      .ticks_per_milli (100),
+      .led   (led_out),
+      .sound (speaker)
+  );
 
 endmodule
