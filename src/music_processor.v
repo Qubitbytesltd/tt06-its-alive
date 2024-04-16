@@ -422,7 +422,7 @@ assign song1_chorus_rhythm[58] = 4;
               b <= 0;
             end
           end
-            led[7] = 1'b1;
+          //  led[7] = 1'b1;
           millis_counter <= 0;
          end
       
@@ -431,7 +431,7 @@ assign song1_chorus_rhythm[58] = 4;
     end 
 
     if (millis_counter == notelength && delay == 1) begin
-        led[7] = 1'b0;
+      //  led[7] = 1'b0;
           delay <= 2;
           sound_freq <= 0;
           millis_counter <= 0;
@@ -451,7 +451,26 @@ assign song1_chorus_rhythm[58] = 4;
     end
      // instantiate segment display
   seg7 seg7(.counter(a[3:0]), .segments(led[6:0]));
+  segdot segdot (.enable(delay),.dot_segment(led[7]));
 endmodule
+
+
+// leg segment dot 
+module segdot (
+    input wire [1:0] enable,
+    output reg [1:0] dot_segment
+);
+always @(*) begin   
+    if (enable == 1) begin
+        dot_segment = 1'b1;
+    end
+    else if (enable == 0) begin
+        dot_segment = 1'b0;
+    end
+end
+endmodule
+     
+               
 
 // led segment
 /*
