@@ -1,11 +1,3 @@
-// SPDX-FileCopyrightText: © 2022 Uri Shaked <uri@wokwi.com>
-// SPDX-License-Identifier: MIT
-
-/*
- * Simon Says game in Verilog. Wokwi Simulation project:
- * https://wokwi.com/projects/352319274216569857
- */
-
 `default_nettype none
 
 
@@ -458,7 +450,7 @@ endmodule
 // leg segment dot 
 module segdot (
     input wire [1:0] enable,
-    output reg [1:0] dot_segment
+    output reg dot_segment
 );
 always @(*) begin   
     if (enable == 1) begin
