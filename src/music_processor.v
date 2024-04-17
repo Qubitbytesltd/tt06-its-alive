@@ -1,3 +1,39 @@
+// SPDX-FileCopyrightText: © 2022 Uri Shaked <uri@wokwi.com>
+// SPDX-License-Identifier: MIT
+
+/*
+ * Simon Says game in Verilog. Wokwi Simulation project:
+ * https://wokwi.com/projects/352319274216569857
+ */
+
+`default_nettype none
+
+module wokwi (
+    input  CLK,
+    input  RST,
+    output LED7,
+    output LED6,
+    output LED5,
+    output LED4,
+    output LED3,
+    output LED2,
+    output LED1,
+    output LED0,
+    output SND
+);
+
+wire reset = !RST;
+
+  music_processor music_processor (
+      .clk   (CLK),
+      .rst   (reset),
+      .ticks_per_milli (10),
+      .led   ({LED7,LED6,LED5,LED4, LED3, LED2, LED1, LED0}),
+      .sound (SND)
+  );
+
+endmodule
+
 `define default_netname none
 
 
@@ -8,7 +44,7 @@ module sound_processor (
     input wire [9:0] freq,
     output wire sound
 );
-  wire [31:0] tick_counter;
+  reg  [31:0] tick_counter;
   wire [31:0] ticks_per_second = ticks_per_milli * 1000;
 
   always @(posedge clk) begin
@@ -36,14 +72,14 @@ module music_processor (
     output wire sound
 );
 
-  wire [9:0] notelength = 0;
-  wire [9:0] beatlength = 100; // determines tempo
+  reg  [9:0] notelength = 0;
+  reg  [9:0] beatlength = 100; // determines tempo
 
-  wire [5:0] a = 4; // part index
-  wire [5:0] b; // song index
+  reg  [5:0] a = 4; // part index
+  reg  [5:0] b; // song index
 
 // // Parts 1 and 2 (Intro) - notes
-wire Part_1_2 = 12;
+parameter  Part_1_2 = 12;
 
 wire [9:0] song1_intro_melody[12:0];
 // Assign each element of melody array
@@ -77,7 +113,7 @@ assign SONG1_INTRO_RHYTHM[11] = 2;
 assign SONG1_INTRO_RHYTHM[12] = 10;
 
 // Parts 3 or 5 (Verse 1)
-wire Part_3_5 = 62;
+parameter   Part_3_5 = 62;
 wire [9:0] song1_verse1_melody[62:0];
 // Assign each element of melody array
 assign song1_verse1_melody[0]  = 0;    // rest
@@ -213,7 +249,7 @@ assign song1_verse1_rhythm[62] = 3;
 
 
 // Parts 4 or 6 (Chorus)
-wire Part_4_6 = 58;
+parameter   Part_4_6 = 58;
 wire [9:0] song1_chorus_melody[58:0];
 // Assign each element of melody array
 assign song1_chorus_melody[0]  = 466;  // b4f
@@ -340,10 +376,10 @@ assign song1_chorus_rhythm[58] = 4;
 
 
 
-  wire [1:0] delay = 0;
-  wire [15:0] tick_counter;
-  wire [9:0] millis_counter;
-  wire [9:0] sound_freq;
+  reg  [1:0] delay = 0;
+  reg  [15:0] tick_counter;
+  reg  [9:0] millis_counter;
+  reg  [9:0] sound_freq;
 
 
   sound_processor sound_processor (
