@@ -13,7 +13,7 @@ module sound_processor (
     input wire [9:0] freq,
     output reg sound
 );
-  reg  [31:0] tick_counter;
+  reg [31:0] tick_counter;
   wire [31:0] ticks_per_second = ticks_per_milli * 1000;
 
   always @(posedge clk) begin
@@ -41,14 +41,14 @@ module music_processor (
     output reg sound
 );
 
-  reg  [9:0] notelength = 0;
-  reg  [9:0] beatlength = 100; // determines tempo
+  reg [9:0] notelength;
+  wire [9:0] beatlength = 100; // determines tempo
 
-  reg  [5:0] a = 4; // part index
-  reg  [5:0] b; // song index
+  reg [5:0] a; // part index
+  reg [5:0] b; // song index
 
 // // Parts 1 and 2 (Intro) - notes
-parameter  Part_1_2 = 12;
+  wire [5:0]  Part_1_2 = 12;
 
 wire [9:0] song1_intro_melody[12:0];
 // Assign each element of melody array
@@ -82,7 +82,7 @@ assign SONG1_INTRO_RHYTHM[11] = 2;
 assign SONG1_INTRO_RHYTHM[12] = 10;
 
 // Parts 3 or 5 (Verse 1)
-parameter   Part_3_5 = 62;
+wire [5:0]  Part_3_5 = 62;
 wire [9:0] song1_verse1_melody[62:0];
 // Assign each element of melody array
 assign song1_verse1_melody[0]  = 0;    // rest
@@ -218,7 +218,7 @@ assign song1_verse1_rhythm[62] = 3;
 
 
 // Parts 4 or 6 (Chorus)
-parameter   Part_4_6 = 58;
+wire [5:0]  Part_4_6 = 58;
 wire [9:0] song1_chorus_melody[58:0];
 // Assign each element of melody array
 assign song1_chorus_melody[0]  = 466;  // b4f
@@ -345,7 +345,7 @@ assign song1_chorus_rhythm[58] = 4;
 
 
 
-  reg  [1:0] delay = 0;
+  reg  [1:0] delay;
   reg  [15:0] tick_counter;
   reg  [9:0] millis_counter;
   reg  [9:0] sound_freq;
