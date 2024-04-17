@@ -22,7 +22,7 @@ module tt_um_qubitbytes_alive (
   // configure unused wires
   wire _unused_ok = &{1'b0,
                     ena,
-                      uio_in[7:2],
+                      uio_in,
                       1'b0,
                       ui_in[7:1],
                       1'b0};
@@ -35,16 +35,16 @@ module tt_um_qubitbytes_alive (
     
   // configure speaker
   wire speaker;
-  wire speaker_n = &{uio_in[1],1'b0};
+//  wire speaker_n = &{uio_in[1],1'b0};
   assign uio_oe = 8'b00000001;
   assign uio_out[0] = speaker;
   assign uio_out[7:1] = 0;
    
     
    // configure clock
-   wire clock_ajust;
-   assign clock_ajust = ui_in[0];
-   reg[15:0]  ticks_per_ms = (clock_ajust == 1'b0) ? 100 : 10; // 100khz or 10khz
+//   wire clock_ajust;
+ //  assign clock_ajust = ui_in[0];
+    reg[15:0]  ticks_per_ms = 100;//(clock_ajust == 1'b0) ? 100 : 10; // 100khz or 10khz
 
     
    // create process
