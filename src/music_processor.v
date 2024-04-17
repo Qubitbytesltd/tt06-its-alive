@@ -1,39 +1,3 @@
-// SPDX-FileCopyrightText: © 2022 Uri Shaked <uri@wokwi.com>
-// SPDX-License-Identifier: MIT
-
-/*
- * Simon Says game in Verilog. Wokwi Simulation project:
- * https://wokwi.com/projects/352319274216569857
- */
-
-`default_nettype none
-
-module wokwi (
-    input  CLK,
-    input  RST,
-    output LED7,
-    output LED6,
-    output LED5,
-    output LED4,
-    output LED3,
-    output LED2,
-    output LED1,
-    output LED0,
-    output SND
-);
-
-wire reset = !RST;
-
-  music_processor music_processor (
-      .clk   (CLK),
-      .rst   (reset),
-      .ticks_per_milli (10),
-      .led   ({LED7,LED6,LED5,LED4, LED3, LED2, LED1, LED0}),
-      .sound (SND)
-  );
-
-endmodule
-
 `define default_netname none
 
 
