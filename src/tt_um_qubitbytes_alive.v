@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 `define default_netname none
-`default_nettype none
 
 module tt_um_qubitbytes_alive (
     input  wire [7:0] ui_in,    // Dedicated inputs
