@@ -442,7 +442,7 @@ endmodule
 // leg segment dot 
 module segdot (
     input wire [1:0] enable,
-    output wire dot_segment
+    output reg dot_segment
 );
 always @(*) begin   
     if (enable == 1) begin
