@@ -32,7 +32,7 @@ module music_processor (
     input wire clk,
     input wire rst,
     input wire [15:0] ticks_per_milli,
-    output wire [7:0] led,
+    output reg [7:0] led,
     output reg sound
 );
 
@@ -362,6 +362,7 @@ assign song1_chorus_rhythm[58] = 4;
       a <= 4;
       b <= 0;
       notelength <= 0;
+      delay <= 0;
     end else begin
       tick_counter <= tick_counter + 1;
 
