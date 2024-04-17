@@ -6,6 +6,7 @@ SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES = tt_um_qubitbytes_alive.v
+PROJECT_SOURCES += music_processor.v
 
 ifneq ($(GATES),yes)
 
