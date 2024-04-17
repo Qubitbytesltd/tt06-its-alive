@@ -19,10 +19,10 @@ module sound_processor (
     end else if (freq == 0) begin
       sound <= 0;
     end else begin
-        tick_counter <= tick_counter + {{22{freq[9]}}, freq}; // test
+        tick_counter <= tick_counter + {22'b0,freq}; // test
       if (tick_counter >= (ticks_per_second >> 1)) begin
         sound <= !sound;
-          tick_counter <= tick_counter + {{22{freq[9]}}, freq} - (ticks_per_second >> 1); // test
+        tick_counter <= tick_counter + {22'b0,freq} - (ticks_per_second >> 1); // test
       end
     end
   end
@@ -356,7 +356,7 @@ assign song1_chorus_rhythm[58] = 4;
   );
 
   always @(posedge clk) begin
-    if (!rst) begin
+    if (rst) begin
       tick_counter <= 0;
       millis_counter <= 0;
       sound_freq <= 0;
@@ -457,7 +457,7 @@ always @(*) begin
     if (enable == 1) begin
         dot_segment = 1'b1;
     end
-    else if (enable == 0) begin
+    else begin
         dot_segment = 1'b0;
     end
 end
