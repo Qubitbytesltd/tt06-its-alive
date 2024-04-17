@@ -6,7 +6,7 @@ module sound_processor (
     input wire rst,
     input wire [15:0] ticks_per_milli,
     input wire [9:0] freq,
-    output wire sound
+    output reg sound
 );
   reg  [31:0] tick_counter;
   wire [31:0] ticks_per_second = ticks_per_milli * 1000;
@@ -33,7 +33,7 @@ module music_processor (
     input wire rst,
     input wire [15:0] ticks_per_milli,
     output wire [7:0] led,
-    output wire sound
+    output reg sound
 );
 
   reg  [9:0] notelength = 0;
@@ -472,7 +472,7 @@ endmodule
 
 module seg7 (
     input wire [3:0] counter,
-    output wire [6:0] segments
+    output reg [6:0] segments
 );
 
     always @(*) begin
