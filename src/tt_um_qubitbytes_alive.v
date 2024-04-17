@@ -23,8 +23,6 @@ module tt_um_qubitbytes_alive (
   wire _unused_ok = &{1'b0,
                     ena,
                     uio_in,
-                      1'b0,
-                      ui_in[7:1],
                       1'b0};
    
     
@@ -44,8 +42,7 @@ module tt_um_qubitbytes_alive (
 //  assign uio_in[7:1] = 0; 
     
    // configure clock
-    wire ticks_per_mili;
-    assign  ticks_per_ms = (ui_in[0] == 1'b0) ? 100 : 10; // 100khz or 10khz
+   reg[15:0]  ticks_per_ms = (ui_in[0] == 1'b0) ? 100 : 10; // 100khz or 10khz
 
     
    // create process
