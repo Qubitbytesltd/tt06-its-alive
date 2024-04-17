@@ -9,7 +9,8 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Plays a cool tune over a speaker or piezo buzzer 
+Why is it called It's Alive? made within the last few days of the shuttle and 24 hours to learn Verilog.
+If it works, it should play a cool tune over a speaker or piezo buzzer 
 
 ## How to test
 
