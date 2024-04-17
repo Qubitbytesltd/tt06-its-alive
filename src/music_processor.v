@@ -23,10 +23,10 @@ module sound_processor (
     end else if (freq == 0) begin
       sound <= 0;
     end else begin
-        tick_counter <= tick_counter + {22'b0,freq}; // test
+        tick_counter <= tick_counter + {22'b0,freq};
       if (tick_counter >= (ticks_per_second >> 1)) begin
         sound <= !sound;
-        tick_counter <= tick_counter + {22'b0,freq} - (ticks_per_second >> 1); // test
+        tick_counter <= tick_counter + {22'b0,freq} - (ticks_per_second >> 1);
       end
     end
   end
