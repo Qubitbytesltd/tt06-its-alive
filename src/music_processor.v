@@ -42,13 +42,15 @@ module music_processor (
 );
 
   reg [9:0] notelength;
-  wire [9:0] beatlength = 100; // determines tempo
+  wire [9:0] beatlength; // determines tempo
+  assign beatlength = 100;
 
   reg [5:0] a; // part index
   reg [5:0] b; // song index
 
 // // Parts 1 and 2 (Intro) - notes
-  wire [5:0]  Part_1_2 = 12;
+wire [5:0]  Part_1_2;
+assign Part_1_2 = 12;
 
 wire [9:0] song1_intro_melody[12:0];
 // Assign each element of melody array
@@ -82,7 +84,10 @@ assign SONG1_INTRO_RHYTHM[11] = 2;
 assign SONG1_INTRO_RHYTHM[12] = 10;
 
 // Parts 3 or 5 (Verse 1)
-wire [5:0]  Part_3_5 = 62;
+wire [5:0]  Part_3_5;
+assign Part_3_5 = 62;
+
+
 wire [9:0] song1_verse1_melody[62:0];
 // Assign each element of melody array
 assign song1_verse1_melody[0]  = 0;    // rest
@@ -218,7 +223,9 @@ assign song1_verse1_rhythm[62] = 3;
 
 
 // Parts 4 or 6 (Chorus)
-wire [5:0]  Part_4_6 = 58;
+wire [5:0]  Part_4_6;
+assign Part_4_6 = 58;
+
 wire [9:0] song1_chorus_melody[58:0];
 // Assign each element of melody array
 assign song1_chorus_melody[0]  = 466;  // b4f
