@@ -34,7 +34,6 @@ module tt_um_qubitbytes_alive (
     
   // configure speaker
   wire speaker;
-//  wire speaker_n = &{uio_in[1],1'b0};
   assign uio_oe = 8'b11111111;
   assign uio_out[0] = speaker;
   assign uio_out[7:1] = 0;
@@ -42,8 +41,7 @@ module tt_um_qubitbytes_alive (
     
    // configure clock
    wire [15:0] ticks_per_ms;
-   assign ticks_per_ms = 10;
-//    reg[15:0]  ticks_per_ms = 10;//(clock_ajust == 1'b0) ? 100 : 10; // 100khz or 10khz
+   assign ticks_per_ms = 10; // 100khz == 100ms, 10khz == 10ms
 
     
    // create process
