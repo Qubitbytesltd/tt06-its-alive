@@ -44,7 +44,7 @@ module tt_um_qubitbytes_alive (
    // configure clock
 //   wire clock_ajust;
  //  assign clock_ajust = ui_in[0];
-    reg[15:0]  ticks_per_ms = 100;//(clock_ajust == 1'b0) ? 100 : 10; // 100khz or 10khz
+    reg[15:0]  ticks_per_ms = 10;//(clock_ajust == 1'b0) ? 100 : 10; // 100khz or 10khz
 
     
    // create process
