@@ -28,15 +28,15 @@ module tt_um_qubitbytes_alive (
    
     
   // configure led segment
-  wire [7:0] led_out = 8'b00000000; // Initialize to all zeros;
+  wire [7:0] led_out; // Initialize to all zeros;
   assign uo_out[7:0] = led_out; 
 
     
   // configure speaker
   wire speaker;
-  assign uio_oe = 8'b11111111;
+  assign uio_oe = 8'b11111111; // enable output on bi-directional pins
   assign uio_out[0] = speaker;
-  assign uio_out[7:1] = 7'b0000000;
+  assign uio_out[7:1] = 0;
    
     
    // configure clock
