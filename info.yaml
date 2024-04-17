@@ -3,7 +3,7 @@ project:
   title:        "It's Alive"      # Project title
   author:       "Jonathan Anderson, Qubitbytes Ltd"      # Your name
   discord:      "genesisisamazing"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "The chip starts to sing"      # One line description of what your project does
+  description:  "plays a cool tune"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     100000      # Clock frequency in Hz (or 0 if not applicable)
 
@@ -41,8 +41,8 @@ pinout:
   uo[7]: "led segment dot"
 
   # Bidirectional pins
-  uio[0]: "speaker_p"
-  uio[1]: "speaker_n"
+  uio[0]: "speaker"
+  uio[1]: ""
   uio[2]: ""
   uio[3]: ""
   uio[4]: ""
