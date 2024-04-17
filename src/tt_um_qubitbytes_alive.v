@@ -28,7 +28,7 @@ module tt_um_qubitbytes_alive (
    
     
   // configure led segment
-  wire [7:0] led_out; // Initialize to all zeros;
+  wire [7:0] led_out;
   assign uo_out[7:0] = led_out; 
 
     
