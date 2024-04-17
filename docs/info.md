@@ -9,17 +9,17 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Plays 1bit music over a speaker or buzzer
+Plays a cool tune over a speaker or piezo buzzer 
 
 ## How to test
 
-clock must be 100khz else it will affect speed and pitch of the song.
-reset button will restart the song.
+The clock must be set to 100khz or else the speed and pitch of the song will be affected.
 
-LED segment will indicate the current song part, which starts at 4 and finishes at 6 and loops around.
-LED dot, indicates activity.
+the reset button will restart the song.
+
+The LED segment number will indicate the current song part, which starts at 4, finishes at 6, and loops around.
+The LED segment dot, indicates processor activity.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
-Speaker
+speaker or piezo buzzer 
