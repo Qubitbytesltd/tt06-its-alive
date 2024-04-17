@@ -24,7 +24,7 @@ module tt_um_qubitbytes_alive (
                     ena,
                       uio_in,
                       1'b0,
-                      ui_in[7:1],
+                      ui_in,
                       1'b0};
    
     
@@ -36,7 +36,7 @@ module tt_um_qubitbytes_alive (
   // configure speaker
   wire speaker;
 //  wire speaker_n = &{uio_in[1],1'b0};
-  assign uio_oe = 8'b00000001;
+  assign uio_oe = 8'b11111111;
   assign uio_out[0] = speaker;
   assign uio_out[7:1] = 0;
    
