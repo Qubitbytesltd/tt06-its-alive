@@ -1,5 +1,4 @@
 `define default_netname none
-`default_nettype none
 
 
 module sound_processor (
@@ -7,9 +6,9 @@ module sound_processor (
     input wire rst,
     input wire [15:0] ticks_per_milli,
     input wire [9:0] freq,
-    output reg sound
+    output wire sound
 );
-  reg [31:0] tick_counter;
+  wire [31:0] tick_counter;
   wire [31:0] ticks_per_second = ticks_per_milli * 1000;
 
   always @(posedge clk) begin
@@ -33,18 +32,18 @@ module music_processor (
     input wire clk,
     input wire rst,
     input wire [15:0] ticks_per_milli,
-    output reg [7:0] led,
+    output wire [7:0] led,
     output wire sound
 );
 
-  reg [9:0] notelength = 0;
-  reg [9:0] beatlength = 100; // determines tempo
+  wire [9:0] notelength = 0;
+  wire [9:0] beatlength = 100; // determines tempo
 
-  reg [5:0] a = 4; // part index
-  reg [5:0] b; // song index
+  wire [5:0] a = 4; // part index
+  wire [5:0] b; // song index
 
 // // Parts 1 and 2 (Intro) - notes
-localparam Part_1_2 = 12;
+wire Part_1_2 = 12;
 
 wire [9:0] song1_intro_melody[12:0];
 // Assign each element of melody array
@@ -78,7 +77,7 @@ assign SONG1_INTRO_RHYTHM[11] = 2;
 assign SONG1_INTRO_RHYTHM[12] = 10;
 
 // Parts 3 or 5 (Verse 1)
-localparam Part_3_5 = 62;
+wire Part_3_5 = 62;
 wire [9:0] song1_verse1_melody[62:0];
 // Assign each element of melody array
 assign song1_verse1_melody[0]  = 0;    // rest
@@ -214,7 +213,7 @@ assign song1_verse1_rhythm[62] = 3;
 
 
 // Parts 4 or 6 (Chorus)
-localparam Part_4_6 = 58;
+wire Part_4_6 = 58;
 wire [9:0] song1_chorus_melody[58:0];
 // Assign each element of melody array
 assign song1_chorus_melody[0]  = 466;  // b4f
@@ -341,13 +340,13 @@ assign song1_chorus_rhythm[58] = 4;
 
 
 
-  reg [1:0] delay = 0;
-  reg [15:0] tick_counter;
-  reg [9:0] millis_counter;
-  reg [9:0] sound_freq;
+  wire [1:0] delay = 0;
+  wire [15:0] tick_counter;
+  wire [9:0] millis_counter;
+  wire [9:0] sound_freq;
 
 
-  sound_processor sound_processor1 (
+  sound_processor sound_processor (
       .clk(clk),
       .rst(rst),
       .ticks_per_milli(ticks_per_milli),
@@ -363,7 +362,6 @@ assign song1_chorus_rhythm[58] = 4;
       a <= 4;
       b <= 0;
       notelength <= 0;
-    //  led <= 8'b11111111;
     end else begin
       tick_counter <= tick_counter + 1;
 
@@ -371,10 +369,7 @@ assign song1_chorus_rhythm[58] = 4;
         tick_counter   <= 0;
         millis_counter <= millis_counter + 1;
       end
-
-       //   led <= millis_counter[7] ? 4'b1111 : 4'b0000;
-          
-          // test     
+        
           // part 1 and 2
         if (delay == 0) begin
           if (a == 1 || a == 2) begin
@@ -415,7 +410,6 @@ assign song1_chorus_rhythm[58] = 4;
               b <= 0;
             end
           end
-          //  led[7] = 1'b1;
           millis_counter <= 0;
          end
       
@@ -424,15 +418,12 @@ assign song1_chorus_rhythm[58] = 4;
     end 
 
     if (millis_counter == notelength && delay == 1) begin
-      //  led[7] = 1'b0;
           delay <= 2;
           sound_freq <= 0;
           millis_counter <= 0;
       end
     else if (millis_counter == notelength / 3 && delay == 2) begin
-      delay <= 0;
-     // millis_counter <= 0;
-      
+      delay <= 0;   
     end
 
     if (a == 7) begin
@@ -451,7 +442,7 @@ endmodule
 // leg segment dot 
 module segdot (
     input wire [1:0] enable,
-    output reg dot_segment
+    output wire dot_segment
 );
 always @(*) begin   
     if (enable == 1) begin
@@ -481,7 +472,7 @@ endmodule
 
 module seg7 (
     input wire [3:0] counter,
-    output reg [6:0] segments
+    output wire [6:0] segments
 );
 
     always @(*) begin
