@@ -427,11 +427,11 @@ assign song1_chorus_rhythm[58] = 4;
          end
       
 
-                if (millis_counter == notelength && delay == 1) begin
+    if (millis_counter == notelength && delay == 1) begin
           delay <= 2;
           sound_freq <= 0;
           millis_counter <= 0;
-      end
+    end
     else if (millis_counter == notelength / 3 && delay == 2) begin
       delay <= 0;   
     end
