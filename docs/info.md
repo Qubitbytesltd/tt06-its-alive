@@ -21,6 +21,11 @@ the reset button will restart the song.
 The LED segment number will indicate the current song part, which starts at 4, finishes at 6, and loops around.
 The LED segment dot, indicates processor activity.
 
+Connect a speaker or piezo buzzer to ``uio[0]`` bi-directional pin (output)\
+``Clock Speed: 100Khz``\
+``Reset Button: restarts tune``\
+``LED Segment: song/processor status``
+
 ## External hardware
 
 speaker or piezo buzzer 
