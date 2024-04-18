@@ -55,5 +55,5 @@ module tt_um_qubitbytes_alive (
 
 // logo on chip
 (* keep *)
-skullfet_logo logo();
+qubitbytes_logo logo();
 endmodule
