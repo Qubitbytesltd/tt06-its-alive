@@ -53,4 +53,7 @@ module tt_um_qubitbytes_alive (
       .sound (speaker)
   );
 
+// logo on chip
+(* keep *)
+skullfet_logo logo();
 endmodule
