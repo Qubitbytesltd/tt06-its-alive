@@ -29,24 +29,10 @@ set ::env(LINTER_INCLUDE_PDK_MODELS) 1
 # Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html
 
 # art
-#set ::env(SYNTH_POWER_DEFINE) "USE_POWER_PINS"
-#set ::env(EXTRA_LEFS) [$::env(DESIGN_DIR)/macros/*.lef]
-#set ::env(EXTRA_GDS_FILES) [$::env(DESIGN_DIR)/macros/*.gds]
-#set ::env(VERILOG_FILES_BLACKBOX) [$::env(DESIGN_DIR)/macros/*.gds]
-
-set ::env(MACROS) "\
-{ \
-    "skullfet_inverter": { \
-      "instances": { \
-        "inv1": { \
-          "location": [20.9, 50], \
-          "orientation": "N" \
-        } \
-      }, \
-      "gds": ["dir::macros/qubitbytes_logo.gds"], \
-      "lef": ["dir::macros/qubitbytes_logo.lef"] \
-    } \
-}"
+set ::env(SYNTH_POWER_DEFINE) "USE_POWER_PINS"
+set ::env(EXTRA_LEFS) [$::env(DESIGN_DIR)/macros/*.lef]
+set ::env(EXTRA_GDS_FILES) [$::env(DESIGN_DIR)/macros/*.gds]
+set ::env(VERILOG_FILES_BLACKBOX) [$::env(DESIGN_DIR)/src/art_macro.v]
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
