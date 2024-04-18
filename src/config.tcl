@@ -32,14 +32,14 @@ set ::env(LINTER_INCLUDE_PDK_MODELS) 1
 set ::env(SYNTH_POWER_DEFINE) "USE_POWER_PINS"
 
 ## lef and gds
-set ::env(EXTRA_LEFS) [$::env(DESIGN_DIR)/macros/*.lef]
-set ::env(EXTRA_GDS_FILES) [$::env(DESIGN_DIR)/macros/*.gds]
+set ::env(EXTRA_LEFS) $::env(DESIGN_DIR)/macros/*.lef
+set ::env(EXTRA_GDS_FILES) $::env(DESIGN_DIR)/macros/*.gds
 
 ### Black-box verilog 
-set ::env(VERILOG_FILES_BLACKBOX) [$::env(DESIGN_DIR)/src/art_blackbox.v]
+set ::env(VERILOG_FILES_BLACKBOX) $::env(DESIGN_DIR)/src/art_blackbox.v
 
 ### Macro Placement
-set ::env(MACRO_PLACEMENT_CFG) [$::env(DESIGN_DIR)/src/macro.cfg]
+set ::env(MACRO_PLACEMENT_CFG) $::env(DESIGN_DIR)/src/macro.cfg
 
 ### Macro PDN Connections
 set ::env(FP_PDN_MACRO_HOOKS) {
