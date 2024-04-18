@@ -45,9 +45,8 @@ set ::env(MACROS) "\
       }, \
       "gds": ["dir::macros/qubitbytes_logo.gds"], \
       "lef": ["dir::macros/qubitbytes_logo.lef"] \
-    }
-}
-"
+    } \
+}"
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
