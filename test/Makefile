@@ -7,6 +7,7 @@ TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES = tt_um_qubitbytes_alive.v
 PROJECT_SOURCES += music_processor.v
+PROJECT_SOURCES += art_blackbox.v
 
 ifneq ($(GATES),yes)
 
