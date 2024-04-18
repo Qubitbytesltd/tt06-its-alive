@@ -32,8 +32,8 @@ set ::env(LINTER_INCLUDE_PDK_MODELS) 1
 set ::env(SYNTH_POWER_DEFINE) "USE_POWER_PINS"
 
 ## lef and gds
-set ::env(EXTRA_LEFS) /work/macros/*.lef
-set ::env(EXTRA_GDS_FILES) /work/macros/*.gds
+set ::env(EXTRA_LEFS) $::env(DESIGN_DIR)/macros/*.lef
+set ::env(EXTRA_GDS_FILES) $::env(DESIGN_DIR)/macros/*.gds
 
 ### Black-box verilog 
 set ::env(VERILOG_FILES_BLACKBOX) $::env(DESIGN_DIR)/art_blackbox.v
