@@ -55,5 +55,5 @@ module tt_um_qubitbytes_alive (
 
 // logo on chip
 (* keep *)
-qubitbytes_logo_blackbox logo1 ();
+qubitbytes_logo logo1 ();
 endmodule
