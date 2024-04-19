@@ -43,7 +43,7 @@ set ::env(MACRO_PLACEMENT_CFG) $::env(DESIGN_DIR)/macro.cfg
 
 ### Macro PDN Connections
 set ::env(FP_PDN_MACRO_HOOKS) {
-	logo1 vcc vss VPWR VGND
+	qubitbytes_logo vcc vss VPWR VGND
 }
 # =-=-=-= custom marcos =-=-=-= 
 
