@@ -58,7 +58,7 @@ module tt_um_qubitbytes_alive (
   );
 
 // logo on chip
-qubitbytes_logo qubitbytes_logo (
+qubitbytes_logo logo1 (
 `ifdef USE_POWER_PINS
 	.VPWR(vcc),
 	.VGND(vss)
