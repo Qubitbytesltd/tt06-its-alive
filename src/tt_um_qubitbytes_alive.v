@@ -5,6 +5,10 @@
 `default_nettype none
 
 module tt_um_qubitbytes_alive (
+`ifdef USE_POWER_PINS
+    inout vdd,		// User area 5.0V supply
+    inout vss,		// User area ground
+`endif
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -54,6 +58,10 @@ module tt_um_qubitbytes_alive (
   );
 
 // logo on chip
-(* keep *)
-qubitbytes_logo logo1 ();
+qubitbytes_logo logo1 (
+`ifdef USE_POWER_PINS
+	.vdd(vdd),
+	.vss(vss)
+`endif
+);
 endmodule
