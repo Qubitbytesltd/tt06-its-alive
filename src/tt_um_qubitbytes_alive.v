@@ -6,8 +6,8 @@
 
 module tt_um_qubitbytes_alive (
 `ifdef USE_POWER_PINS
-    inout vdd,		// User area 5.0V supply
-    inout vss,		// User area ground
+    input VPWR,		// User area 5.0V supply
+    input VGND,		// User area ground
 `endif
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
@@ -60,8 +60,8 @@ module tt_um_qubitbytes_alive (
 // logo on chip
 qubitbytes_logo logo1 (
 `ifdef USE_POWER_PINS
-	.vdd(vdd),
-	.vss(vss)
+	.VPWR(VPWR),
+	.VGND(VGND)
 `endif
 );
 endmodule
