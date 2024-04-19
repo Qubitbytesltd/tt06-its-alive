@@ -29,6 +29,8 @@ set ::env(LINTER_INCLUDE_PDK_MODELS) 1
 # Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html
 
 # =-=-=-= custom marcos =-=-=-= 
+set ::env(VDD_NETS) [list {vdd}]
+set ::env(GND_NETS) [list {vss}]
 set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
 
 ## lef and gds
