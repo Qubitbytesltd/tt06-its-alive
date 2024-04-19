@@ -42,9 +42,7 @@ set ::env(VERILOG_FILES_BLACKBOX) $::env(DESIGN_DIR)/art_blackbox.v
 set ::env(MACRO_PLACEMENT_CFG) $::env(DESIGN_DIR)/macro.cfg
 
 ### Macro PDN Connections
-set ::env(FP_PDN_MACRO_HOOKS) {
-	qubitbytes_logo vcc vss VPWR VGND
-}
+set ::env(FP_PDN_MACRO_HOOKS) "logo1 vcc vss VPWR VGND"
 # =-=-=-= custom marcos =-=-=-= 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
