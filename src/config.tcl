@@ -29,7 +29,7 @@ set ::env(LINTER_INCLUDE_PDK_MODELS) 1
 # Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html
 
 # =-=-=-= custom marcos =-=-=-= 
-set ::env(SYNTH_POWER_DEFINE) "USE_POWER_PINS"
+set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
 
 ## lef and gds
 set ::env(EXTRA_LEFS) $::env(DESIGN_DIR)/../macros/qubitbytes_logo.lef
