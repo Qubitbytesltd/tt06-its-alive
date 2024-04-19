@@ -1,5 +1,5 @@
 (* blackbox *)
-module qubitbytes_logo (
+module qubitbytes_logo_blackbox (
 `ifdef USE_POWER_PINS
     input  VGND,
     input  VPWR
