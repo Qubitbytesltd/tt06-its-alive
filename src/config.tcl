@@ -29,8 +29,8 @@ set ::env(LINTER_INCLUDE_PDK_MODELS) 1
 # Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html
 
 # =-=-=-= custom marcos =-=-=-= 
-set ::env(VDD_NETS) [list {vdd}]
-set ::env(GND_NETS) [list {vss}]
+set ::env(VDD_NETS) [list {VPWR}]
+set ::env(GND_NETS) [list {VGND}]
 set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
 
 ## lef and gds
@@ -45,7 +45,7 @@ set ::env(MACRO_PLACEMENT_CFG) $::env(DESIGN_DIR)/macro.cfg
 
 ### Macro PDN Connections
 set ::env(FP_PDN_MACRO_HOOKS) {
-	logo1 vdd vss vdd vss
+	logo1 VPWR VGND VPWR VGND
 }
 # =-=-=-= custom marcos =-=-=-= 
 
